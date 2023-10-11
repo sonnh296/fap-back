@@ -23,8 +23,8 @@ public class Student {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "student_id", unique = true)
-    private String studentId;
+    @Column(name = "student_code")
+    private String studentCode;
 
     @OneToMany(mappedBy = "student",
             fetch = FetchType.LAZY,
