@@ -7,6 +7,9 @@ import vn.fpt.fap.seven.entity.Student;
 import vn.fpt.fap.seven.repository.StudentRepository;
 import vn.fpt.fap.seven.service.StudentService;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class StudentServiceImpl implements StudentService {
@@ -14,5 +17,15 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Iterable<Student> findAllStudents() {
         return studentRepository.findAll();
+    }
+
+    @Override
+    public List<Student> findListStudentsByGroupId(int groupId) {
+        return studentRepository.findListStudentsByGroupId(groupId);
+    }
+
+    @Override
+    public Optional<Student> findStudentById(int id) {
+        return studentRepository.findById(id);
     }
 }

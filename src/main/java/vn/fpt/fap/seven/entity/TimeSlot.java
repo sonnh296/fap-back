@@ -1,5 +1,8 @@
 package vn.fpt.fap.seven.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,7 +23,7 @@ public class TimeSlot {
     private String description;
 
     @OneToMany(mappedBy = "timeSlot",
-            fetch = FetchType.EAGER,
+            fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE,
                     CascadeType.PERSIST, CascadeType.REFRESH})
     private List<Session> sessionList;

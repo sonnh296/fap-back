@@ -24,6 +24,7 @@ public class Attendance {
     private Student student;
 
     private boolean present;
+
     private String description;
 
     @Temporal(TemporalType.TIMESTAMP)
