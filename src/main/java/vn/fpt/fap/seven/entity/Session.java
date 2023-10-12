@@ -1,5 +1,8 @@
 package vn.fpt.fap.seven.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,6 +26,8 @@ public class Session {
 
     private int theIndex;
 
+    private boolean attandence;
+
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "groupId")
     private Group group;
@@ -39,5 +44,5 @@ public class Session {
     @JoinColumn(name = "teacherId")
     private Teacher teacher;
 
-    private boolean attandence;
+
 }
