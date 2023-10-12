@@ -23,7 +23,7 @@ public class SessionController {
     private final GroupService groupService;
 
 
-    @GetMapping("/sessions/{teacherId}")
+    @GetMapping("/list-sessions/{teacherId}")
     @ResponseStatus(OK)
     @PermitAll
     public ApiResponse<List<SessionResponse>> getListSession(@PathVariable("teacherId") Integer teacherId){
@@ -33,4 +33,6 @@ public class SessionController {
                 .data(sessions)
                 .build();
     }
+
+
 }

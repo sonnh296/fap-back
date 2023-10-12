@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Builder
 @NoArgsConstructor
@@ -27,6 +28,11 @@ public class Session {
     private int theIndex;
 
     private boolean attandence;
+
+    @OneToMany(mappedBy = "session",
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private List<Attendance> attendanceList;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "groupId")

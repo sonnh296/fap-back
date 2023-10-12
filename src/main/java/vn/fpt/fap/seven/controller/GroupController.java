@@ -24,10 +24,7 @@ public class GroupController {
 
 
 
-    @GetMapping("list-student/{groupId}")
-    public ResponseEntity<List<Student>> getListStudent(@PathVariable int groupId){
-        return ResponseEntity.ok(studentService.findListStudentsByGroupId(groupId));
-    }
+
 
 
 
