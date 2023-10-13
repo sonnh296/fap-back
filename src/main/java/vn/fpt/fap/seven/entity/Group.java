@@ -22,9 +22,11 @@ public class Group {
 
     private String gname;
 
-    private String sem;
-
     private int year;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "semId")
+    private Semester semester;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "tid")
