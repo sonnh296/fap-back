@@ -8,9 +8,7 @@ import vn.fpt.fap.seven.entity.Session;
 import vn.fpt.fap.seven.repository.SessionRepository;
 import vn.fpt.fap.seven.service.SessionService;
 
-
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -26,6 +24,5 @@ public class SessionServiceImpl implements SessionService {
                 .map(sessionMap -> modelMapper.map(sessionMap, SessionResponse.class))
                 .toList();
     }
-
 
 }

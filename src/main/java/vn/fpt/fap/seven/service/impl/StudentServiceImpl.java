@@ -19,16 +19,5 @@ public class StudentServiceImpl implements StudentService {
     private final StudentRepository studentRepository;
     private final ModelMapper modelMapper;
 
-    @Override
-    public List<StudentResponse> findStudentsByGroupIdAndSessionId(int groupId, int sessionId) {
-        List<Student> studentResponses = studentRepository.findStudentsByGroupIdAndSessionId(groupId, sessionId);
-        return studentResponses.stream()
-                .map(studentMap -> modelMapper.map(studentMap, StudentResponse.class))
-//                .map(student -> {
-//                    StudentResponse student1 = modelMapper.map(student, StudentResponse.class);
-//                    student1.setListAttendanceResponse(student.getAttendanceList().stream().map(attendance -> modelMapper.map(attendance, AttendanceResponse.class)).toList());
-//                    return student1;
-//                })
-                .toList();
-    }
+
 }

@@ -13,14 +13,16 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class AttendanceServiceImpl implements AttendanceService {
+
     private final AttendanceRespository attendanceRespository;
     private final ModelMapper modelMapper;
 
     @Override
     public List<AttendanceResponse> findAttendanceBySessionId(int sesId) {
         List<Attendance> attendances = attendanceRespository.findAttendanceBySessionId(sesId);
-        return attendances.stream()
+        List<AttendanceResponse> attendanceResponses = attendances.stream()
                 .map(attendanceMap -> modelMapper.map(attendanceMap, AttendanceResponse.class))
                 .toList();
+        return attendanceResponses;
     }
 }

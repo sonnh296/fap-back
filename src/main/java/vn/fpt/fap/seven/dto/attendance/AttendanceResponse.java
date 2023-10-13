@@ -1,6 +1,7 @@
 package vn.fpt.fap.seven.dto.attendance;
 
 import lombok.*;
+import vn.fpt.fap.seven.dto.session.SessionResponse;
 import vn.fpt.fap.seven.dto.student.StudentResponse;
 
 import java.util.Date;
@@ -16,5 +17,5 @@ public class AttendanceResponse {
     private boolean present;
     private String description;
     private Date record_time;
-    private StudentResponse studentResponse;
+    private StudentResponse student;
 }

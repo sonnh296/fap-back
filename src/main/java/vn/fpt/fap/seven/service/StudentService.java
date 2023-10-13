@@ -9,8 +9,4 @@ import java.util.Optional;
 
 public interface StudentService {
 
-    List<StudentResponse> findStudentsByGroupIdAndSessionId(int groupId, int sessionId);
-
-
-
 }

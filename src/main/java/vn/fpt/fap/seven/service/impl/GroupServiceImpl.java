@@ -1,7 +1,6 @@
 package vn.fpt.fap.seven.service.impl;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import vn.fpt.fap.seven.entity.Group;
 import vn.fpt.fap.seven.repository.GroupRepository;
