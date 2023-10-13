@@ -3,6 +3,7 @@ package vn.fpt.fap.seven.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import vn.fpt.fap.seven.dto.attendance.AttendanceRequest;
 import vn.fpt.fap.seven.dto.attendance.AttendanceResponse;
 import vn.fpt.fap.seven.entity.Attendance;
 import vn.fpt.fap.seven.repository.AttendanceRespository;
@@ -24,5 +25,16 @@ public class AttendanceServiceImpl implements AttendanceService {
                 .map(attendanceMap -> modelMapper.map(attendanceMap, AttendanceResponse.class))
                 .toList();
         return attendanceResponses;
+    }
+
+    @Override
+    public void updateListAttendance(int sesId, List<AttendanceRequest> attendanceRequest){
+        List<Attendance> attendance = attendanceRespository.findAttendanceBySessionId(sesId);
+        for (int i = 0; i < attendance.size(); i++) {
+            Attendance exiting = attendance.get(i);
+            AttendanceRequest request = attendanceRequest.get(i);
+            exiting.setPresent(request.isPresent());
+        }
+        attendanceRespository.saveAll(attendance);
     }
 }
