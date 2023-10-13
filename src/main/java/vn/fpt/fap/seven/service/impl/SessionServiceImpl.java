@@ -8,7 +8,6 @@ import vn.fpt.fap.seven.entity.Session;
 import vn.fpt.fap.seven.repository.SessionRepository;
 import vn.fpt.fap.seven.service.SessionService;
 
-
 import java.util.List;
 
 @Service
@@ -17,17 +16,13 @@ public class SessionServiceImpl implements SessionService {
     private final SessionRepository sessionRepository;
     private final ModelMapper modelMapper;
 
-    @Override
-    public List<Session> findListSessionByTeacherIdAndTimeSlotId(int teacherId, int timeId) {
-
-        return sessionRepository.findListSessionByTeacherIdAndTimeSlotId(timeId, teacherId);
-    }
 
     @Override
     public List<SessionResponse> findSessionsByTeacherId(int teacherId) {
         List<Session> sessions = sessionRepository.findSessionsByTeacherId(teacherId);
         return sessions.stream()
-                .map(session -> modelMapper.map(sessions, SessionResponse.class))
+                .map(sessionMap -> modelMapper.map(sessionMap, SessionResponse.class))
                 .toList();
     }
+
 }

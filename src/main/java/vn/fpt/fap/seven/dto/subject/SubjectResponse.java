@@ -1,4 +1,4 @@
-package vn.fpt.fap.seven.dto.timeslot;
+package vn.fpt.fap.seven.dto.subject;
 
 import lombok.*;
 
@@ -8,7 +8,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-public class TimeSlotResponse {
+public class SubjectResponse {
     private int id;
-    private String description;
+    private String subjectName;
 }
