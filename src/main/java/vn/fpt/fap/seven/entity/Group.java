@@ -50,5 +50,4 @@ public class Group {
             inverseJoinColumns = @JoinColumn(name = "studentId")
     )
     private List<Student> studentList;
-
 }

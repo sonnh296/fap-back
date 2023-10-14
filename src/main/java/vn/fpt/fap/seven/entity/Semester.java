@@ -25,12 +25,9 @@ public class Semester {
                     CascadeType.PERSIST, CascadeType.REFRESH})
     private List<Group> sessionGroup;
 
-
     @OneToMany(mappedBy = "semester",
             fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE,
                     CascadeType.PERSIST, CascadeType.REFRESH})
     private List<Subject> listSubject;
-
-
 }

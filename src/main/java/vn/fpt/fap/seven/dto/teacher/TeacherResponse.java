@@ -11,6 +11,5 @@ import lombok.*;
 public class TeacherResponse {
     private int id;
     private String name;
-    private String email;
 
 }

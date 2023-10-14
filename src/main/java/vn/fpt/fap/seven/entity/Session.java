@@ -50,6 +50,4 @@ public class Session {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "teacherId")
     private Teacher teacher;
-
-
 }

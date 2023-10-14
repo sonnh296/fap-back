@@ -16,7 +16,6 @@ import java.util.List;
 @ToString
 @Entity
 @Table(name = "student")
-
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +29,6 @@ public class Student {
 
     @Column(name = "student_code")
     private String studentCode;
-
     @OneToMany(mappedBy = "student",
             fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE,

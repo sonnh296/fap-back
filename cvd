@@ -1,0 +1,50 @@
+[33mcommit 73ef52c9ef5e9b8d903d878b6d8c68455f184223[m[33m ([m[1;36mHEAD -> [m[1;32mtoan[m[33m, [m[1;31morigin/toan[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: ac1623a ee4e09f
+Author: Nguyen Hong Son <146052985+sonnh296@users.noreply.github.com>
+Date:   Fri Oct 13 21:09:40 2023 +0700
+
+    Merge pull request #5 from sonnh296/authen
+    
+    update response authen
+
+[33mcommit ee4e09f3b445e7ef0932e29ce995ed485df922e8[m[33m ([m[1;31morigin/authen[m[33m)[m
+Author: nguyen hong son <sonnh296@gmail.com>
+Date:   Fri Oct 13 20:50:55 2023 +0700
+
+    update response authen
+
+[33mcommit ac1623a81a2aa66eeda8b86bb709be1b073067f5[m[33m ([m[1;32mmain[m[33m)[m
+Merge: 6985eea e2e7e16
+Author: Nguyen Hong Son <146052985+sonnh296@users.noreply.github.com>
+Date:   Wed Oct 11 22:54:11 2023 +0700
+
+    Merge pull request #2 from sonnh296/teacher
+    
+    update authen register
+
+[33mcommit e2e7e16b30d802422d09a636f7130232ac3832aa[m
+Author: okbeoi <109275012+okbeoi@users.noreply.github.com>
+Date:   Wed Oct 11 22:51:28 2023 +0700
+
+    update
+
+[33mcommit 6985eea2011f47c39ce2b6a7f4de57c3ec760bdf[m
+Merge: d89a431 0cc4013
+Author: Nguyễn Hồng Đăng <109275012+Dangnhhe161726@users.noreply.github.com>
+Date:   Wed Oct 11 22:47:54 2023 +0700
+
+    Merge pull request #1 from sonnh296/teacher
+    
+    update
+
+[33mcommit 0cc4013853f6f42473a902266fa5eca9d69bdf4c[m
+Author: okbeoi <109275012+okbeoi@users.noreply.github.com>
+Date:   Wed Oct 11 22:46:33 2023 +0700
+
+    update
+
+[33mcommit d89a431304f1c4c22302ad453a9928c32d87ff7e[m
+Author: nguyen hong son <sonnh296@gmail.com>
+Date:   Wed Oct 11 21:01:50 2023 +0700
+
+    initial commit

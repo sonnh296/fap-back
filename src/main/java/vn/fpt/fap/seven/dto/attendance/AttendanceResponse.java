@@ -16,6 +16,4 @@ public class AttendanceResponse {
     private int id;
     private boolean present;
     private String description;
-    private Date record_time;
-    private StudentResponse student;
 }
