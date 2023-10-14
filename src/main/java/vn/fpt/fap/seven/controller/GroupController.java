@@ -19,31 +19,18 @@ import static org.springframework.http.HttpStatus.OK;
 @RequiredArgsConstructor
 public class GroupController {
 
-    private final GroupService groupService;
-
     private final AttendanceService attendanceService;
 
-//    @GetMapping("/group/{studentId}")
-//    @ResponseStatus(OK)
-//    @PermitAll
-//    public ApiResponse<List<GroupResponse>> getListGroup(@PathVariable("studentId") Integer studentId) {
-//        List<GroupResponse> groupResponses = groupService.findListGroupByStudentId(studentId);
-//        return ApiResponse.< List<GroupResponse>>builder()
-//                .message("Get list attendance has: " + studentId + " success.")
-//                .data(groupResponses)
-//                .build();
-//    }
-
-    @GetMapping("/group/student_id/{studentId}/sem_id/{semId}/sub_id/{suId}")
+    @GetMapping("/group/student_id/{studentId}/suId/{suId}/semId/{semId}")
     @ResponseStatus(OK)
     @PermitAll
-    public ApiResponse<AttendanceResponse1> getGroup(@PathVariable("studentId") Integer studentId
-            , @PathVariable("semId") Integer semId
-            , @PathVariable("suId") Integer suId) {
-        AttendanceResponse1 attendance = attendanceService.findGroupByStudentIdAndSemIdAndSId(studentId, semId, suId);
-        return ApiResponse.<AttendanceResponse1>builder()
+    public ApiResponse<List<AttendanceResponse1>> getGroup(@PathVariable("studentId") Integer studentId
+            , @PathVariable("suId") Integer suId
+            , @PathVariable("semId") Integer semId) {
+        List<AttendanceResponse1> attendances = attendanceService.findGroupByStudentIdAndSemIdAndSId(studentId, suId,semId);
+        return ApiResponse.<List<AttendanceResponse1>>builder()
                 .message("Get list student has studentId: " + studentId + " success.")
-                .data(attendance)
+                .data(attendances)
                 .build();
     }
 }

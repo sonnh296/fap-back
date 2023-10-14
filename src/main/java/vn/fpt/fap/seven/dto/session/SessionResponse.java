@@ -19,8 +19,10 @@ import java.util.List;
 @ToString
 public class SessionResponse {
     private int sesId;
+    private boolean attandence;
+    private int theIndex;
     private Date date_time;
+    private GroupResponse group;
     private RoomResponse room;
     private TimeSlotResponse timeSlot;
-    //private List<AttendanceResponse> attendanceList;
 }

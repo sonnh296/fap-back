@@ -25,5 +25,4 @@ public class GroupResponse {
     private SubjectResponse subject;
     private TeacherResponse teacher;
     private SemesterResponse semester;
-    private List<SessionResponse> sessionList;
 }

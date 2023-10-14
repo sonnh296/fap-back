@@ -32,7 +32,7 @@ public class AttendanceController {
 
     @PutMapping("/update-attendance/{sesId}")
     @ResponseStatus(OK)
-    public ApiResponse updateLesson(@Valid @RequestBody List<AttendanceRequest> listAttendanceRequest,
+    public ApiResponse updateAttendance(@Valid @RequestBody List<AttendanceRequest> listAttendanceRequest,
                                     @PathVariable("sesId") Integer sesId) {
         attendanceService.updateListAttendance(sesId, listAttendanceRequest);
         return ApiResponse.builder()

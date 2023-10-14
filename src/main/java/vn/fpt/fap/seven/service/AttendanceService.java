@@ -12,5 +12,5 @@ public interface AttendanceService {
     List<AttendanceResponse> findAttendanceBySessionId(int sesId);
     void updateListAttendance(int sesId, List<AttendanceRequest> attendanceRequest);
 
-    AttendanceResponse1 findGroupByStudentIdAndSemIdAndSId(int studentId, int suId, int semId);
+    List<AttendanceResponse1> findGroupByStudentIdAndSemIdAndSId(int studentId, int suId, int semId);
 }

@@ -42,9 +42,11 @@ public class AttendanceServiceImpl implements AttendanceService {
     }
 
     @Override
-    public AttendanceResponse1 findGroupByStudentIdAndSemIdAndSId(int studentId, int suId, int semId) {
-        Attendance attendance = attendanceRespository.findGroupByStudentIdAndSemIdAndSId(studentId, suId, semId);
-        return modelMapper.map(attendance, AttendanceResponse1.class);
+    public List<AttendanceResponse1> findGroupByStudentIdAndSemIdAndSId(int studentId, int suId, int semId) {
+        List<Attendance> attendances = attendanceRespository.findGroupByStudentIdAndSemIdAndSId(studentId, suId, semId);
+        return attendances.stream()
+                .map(attendanceMap -> modelMapper.map(attendanceMap, AttendanceResponse1.class))
+                .toList();
     }
 
     /*@Override
