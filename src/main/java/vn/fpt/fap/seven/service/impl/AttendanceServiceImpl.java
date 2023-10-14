@@ -5,7 +5,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import vn.fpt.fap.seven.dto.attendance.AttendanceRequest;
 import vn.fpt.fap.seven.dto.attendance.AttendanceResponse;
+import vn.fpt.fap.seven.dto.attendance.AttendanceResponse1;
+import vn.fpt.fap.seven.dto.group.GroupResponse;
 import vn.fpt.fap.seven.entity.Attendance;
+import vn.fpt.fap.seven.entity.Group;
 import vn.fpt.fap.seven.repository.AttendanceRespository;
 import vn.fpt.fap.seven.service.AttendanceService;
 
@@ -37,4 +40,16 @@ public class AttendanceServiceImpl implements AttendanceService {
         }
         attendanceRespository.saveAll(attendance);
     }
+
+    @Override
+    public AttendanceResponse1 findGroupByStudentIdAndSemIdAndSId(int studentId, int suId, int semId) {
+        Attendance attendance = attendanceRespository.findGroupByStudentIdAndSemIdAndSId(studentId, suId, semId);
+        return modelMapper.map(attendance, AttendanceResponse1.class);
+    }
+
+    /*@Override
+    public AttendanceResponse findGroupByStudentIdAndSemIdAndSId(int studentId, int suId, int semId) {
+        Attendance attendance = attendanceRespository.findGroupByStudentIdAndSemIdAndSId(studentId, suId, semId);
+        return modelMapper.map(attendance, AttendanceResponse.class);
+    }*/
 }
