@@ -1,10 +1,14 @@
 package vn.fpt.fap.seven.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
 import vn.fpt.fap.seven.user.User;
 
 import java.util.List;
+
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,6 +17,7 @@ import java.util.List;
 @ToString
 @Entity
 @Table(name = "student")
+
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,8 +29,8 @@ public class Student {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "student_id", unique = true)
-    private String studentId;
+    @Column(name = "student_code")
+    private String studentCode;
 
     @OneToOne
     @JoinColumn(name = "student_id")
@@ -33,7 +38,8 @@ public class Student {
 
     @OneToMany(mappedBy = "student",
             fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
+            cascade = {CascadeType.DETACH, CascadeType.MERGE,
+                    CascadeType.PERSIST, CascadeType.REFRESH})
     private List<Attendance> attendanceList;
 
     @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},

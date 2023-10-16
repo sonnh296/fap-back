@@ -1,8 +1,12 @@
 package vn.fpt.fap.seven.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
 import vn.fpt.fap.seven.user.User;
+
 
 import java.util.List;
 
@@ -13,6 +17,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "teacher")
+
 public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

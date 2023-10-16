@@ -1,5 +1,7 @@
 package vn.fpt.fap.seven.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,8 +21,12 @@ public class Group {
     private int gid;
 
     private String gname;
-    private String sem;
+
     private int year;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "semId")
+    private Semester semester;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "tid")
@@ -31,7 +37,7 @@ public class Group {
     private Subject subject;
 
     @OneToMany(mappedBy = "group",
-            fetch = FetchType.EAGER,
+            fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE,
                     CascadeType.PERSIST, CascadeType.REFRESH})
     private List<Session> sessionList;
@@ -44,4 +50,5 @@ public class Group {
             inverseJoinColumns = @JoinColumn(name = "studentId")
     )
     private List<Student> studentList;
+
 }
