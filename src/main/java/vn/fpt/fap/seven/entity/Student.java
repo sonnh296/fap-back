@@ -2,6 +2,7 @@ package vn.fpt.fap.seven.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import vn.fpt.fap.seven.user.User;
 
 import java.util.List;
 @Builder
@@ -25,6 +26,10 @@ public class Student {
 
     @Column(name = "student_id", unique = true)
     private String studentId;
+
+    @OneToOne
+    @JoinColumn(name = "student_id")
+    private User user;
 
     @OneToMany(mappedBy = "student",
             fetch = FetchType.LAZY,
