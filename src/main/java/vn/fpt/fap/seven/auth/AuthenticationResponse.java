@@ -13,5 +13,6 @@ import vn.fpt.fap.seven.user.Role;
 public class AuthenticationResponse {
     private String token;
     private Role role;
+    private int id;
 }
 

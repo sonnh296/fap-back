@@ -2,6 +2,8 @@ package vn.fpt.fap.seven.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import vn.fpt.fap.seven.user.User;
+
 import java.util.List;
 
 @Builder
@@ -21,6 +23,10 @@ public class Teacher {
 
     @Column(name = "email")
     private String email;
+
+    @OneToOne
+    @JoinColumn(name = "teacher_id")
+    private User user;
 
     @OneToMany(mappedBy = "teacher",
             fetch = FetchType.LAZY,
