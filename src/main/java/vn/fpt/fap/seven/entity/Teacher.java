@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
+import vn.fpt.fap.seven.user.User;
+
 
 import java.util.List;
 
@@ -26,6 +28,10 @@ public class Teacher {
 
     @Column(name = "email")
     private String email;
+
+    @OneToOne
+    @JoinColumn(name = "teacher_id")
+    private User user;
 
     @OneToMany(mappedBy = "teacher",
             fetch = FetchType.LAZY,
