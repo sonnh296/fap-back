@@ -8,5 +8,5 @@ public interface GroupService {
 
     List<GroupResponse> findListGroupByStudentId(int studentId);
 
-    GroupResponse findGroupByStudentIdAndSemIdAndSId(int studentId, int semId, int sId);
+//    GroupResponse findGroupByStudentIdAndSemIdAndSId(int studentId, int semId, int sId);
 }

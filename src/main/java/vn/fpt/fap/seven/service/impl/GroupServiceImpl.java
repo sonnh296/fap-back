@@ -25,9 +25,9 @@ public class GroupServiceImpl implements GroupService {
                 .toList();
     }
 
-    @Override
-    public GroupResponse findGroupByStudentIdAndSemIdAndSId(int studentId, int semId, int sId) {
-        Group group = groupRepository.findGroupByStudentIdAndSemIdAndSId(studentId, semId, sId);
-        return modelMapper.map(group, GroupResponse.class);
-    }
+//    @Override
+//    public GroupResponse findGroupByStudentIdAndSemIdAndSId(int studentId, int semId, int sId) {
+//        Group group = groupRepository.findGroupByStudentIdAndSemIdAndSId(studentId, semId, sId);
+//        return modelMapper.map(group, GroupResponse.class);
+//    }
 }

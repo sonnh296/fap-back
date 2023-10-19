@@ -30,18 +30,18 @@ public class GroupController {
 //                .build();
 //    }
 
-    @GetMapping("/group/student_id/{studentId}/sem_id/{semId}/sub_id/{subId}")
-    @ResponseStatus(OK)
-    @PermitAll
-    public ApiResponse<GroupResponse> getGroup(@PathVariable("studentId") Integer studentId
-            , @PathVariable("semId") Integer semId
-            , @PathVariable("subId") Integer subId) {
-        GroupResponse groupRespons = groupService.findGroupByStudentIdAndSemIdAndSId(studentId, semId, subId);
-        return ApiResponse.<GroupResponse>builder()
-                .message("Get list attendance has: " + studentId + " success.")
-                .data(groupRespons)
-                .build();
-    }
+//    @GetMapping("/group/student_id/{studentId}/sem_id/{semId}/sub_id/{subId}")
+//    @ResponseStatus(OK)
+//    @PermitAll
+//    public ApiResponse<GroupResponse> getGroup(@PathVariable("studentId") Integer studentId
+//            , @PathVariable("semId") Integer semId
+//            , @PathVariable("subId") Integer subId) {
+//        GroupResponse groupRespons = groupService.findGroupByStudentIdAndSemIdAndSId(studentId, semId, subId);
+//        return ApiResponse.<GroupResponse>builder()
+//                .message("Get list attendance has: " + studentId + " success.")
+//                .data(groupRespons)
+//                .build();
+//    }
 
 
 }
