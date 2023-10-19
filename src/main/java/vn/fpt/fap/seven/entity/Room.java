@@ -1,5 +1,6 @@
 package vn.fpt.fap.seven.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,6 +20,7 @@ public class Room {
 
     private String name;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "room",
             fetch = FetchType.EAGER,
             cascade = {CascadeType.DETACH, CascadeType.MERGE,

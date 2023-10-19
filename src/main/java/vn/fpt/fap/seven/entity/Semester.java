@@ -6,24 +6,24 @@ import lombok.*;
 
 import java.util.List;
 
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 @ToString
 @Entity
-@Table(name = "time_slot")
-public class TimeSlot {
+@Table(name = "semester")
+public class Semester {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int Id;
 
-    private String description;
+    private String name;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "timeSlot",
-            fetch = FetchType.EAGER,
+    @OneToMany(mappedBy = "semester",
+            fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE,
                     CascadeType.PERSIST, CascadeType.REFRESH})
-    private List<Session> sessionList;
+    private List<Group> sessionGroup;
 }

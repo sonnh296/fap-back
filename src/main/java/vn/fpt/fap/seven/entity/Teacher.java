@@ -1,5 +1,6 @@
 package vn.fpt.fap.seven.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import vn.fpt.fap.seven.user.User;
@@ -24,16 +25,19 @@ public class Teacher {
     @Column(name = "email")
     private String email;
 
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "teacher_id")
     private User user;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "teacher",
             fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE,
                     CascadeType.PERSIST, CascadeType.REFRESH})
     private List<Session> sessionList;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "teacher",
             fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE,

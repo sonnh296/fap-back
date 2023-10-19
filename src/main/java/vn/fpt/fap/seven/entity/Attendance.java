@@ -1,5 +1,6 @@
 package vn.fpt.fap.seven.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,11 +15,14 @@ import java.util.Date;
 @Table(name = "attendance")
 public class Attendance {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     @ManyToOne
     @JoinColumn(name = "sessionid")
     private Session session;
 
-    @Id
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "student_id")
     private Student student;

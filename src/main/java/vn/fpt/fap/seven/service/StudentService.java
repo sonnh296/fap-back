@@ -4,4 +4,5 @@ import vn.fpt.fap.seven.entity.Student;
 
 public interface StudentService {
     Iterable<Student> findAllStudents();
+    Student findByCode(String code);
 }

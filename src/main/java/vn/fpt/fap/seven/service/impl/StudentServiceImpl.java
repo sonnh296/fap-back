@@ -15,4 +15,9 @@ public class StudentServiceImpl implements StudentService {
     public Iterable<Student> findAllStudents() {
         return studentRepository.findAll();
     }
+
+    @Override
+    public Student findByCode(String code) {
+        return studentRepository.findStudentByUser_Id(code);
+    }
 }

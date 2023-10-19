@@ -37,6 +37,8 @@ public class SecurityConfiguration {
                         .permitAll()
                         .requestMatchers("/api/v1/students/**")
                         .hasAnyAuthority(TEACHER.name())
+                        .requestMatchers("/api/v1/group/**")
+                        .hasAnyAuthority(TEACHER.name())
                         .anyRequest()
                         .authenticated()
                 )

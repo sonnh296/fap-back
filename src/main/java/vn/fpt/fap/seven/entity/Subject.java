@@ -1,6 +1,7 @@
 package vn.fpt.fap.seven.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,9 +23,11 @@ public class Subject {
     @Column(name = "subject_name")
     private String subjectName;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "subject",
             fetch = FetchType.EAGER,
             cascade = {CascadeType.DETACH, CascadeType.MERGE,
                     CascadeType.PERSIST, CascadeType.REFRESH})
     private List<Group> groupList;
+
 }

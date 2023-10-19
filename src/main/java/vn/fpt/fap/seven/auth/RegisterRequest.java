@@ -11,6 +11,7 @@ import vn.fpt.fap.seven.user.Role;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RegisterRequest {
+    private String id;
     private String firstname;
     private String lastname;
     private String email;
