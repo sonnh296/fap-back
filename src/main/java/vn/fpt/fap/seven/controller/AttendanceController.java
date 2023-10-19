@@ -8,12 +8,13 @@ import vn.fpt.fap.seven.service.impl.AttendanceServiceImpl;
 
 import java.util.List;
 
-@CrossOrigin
 @RestController
-@RequestMapping("/api/v1/attendance")
+@RequestMapping("/api/v1/auth/attendance")
 @RequiredArgsConstructor
 public class AttendanceController {
     private final AttendanceServiceImpl attendanceService;
+
+    @CrossOrigin
     @PostMapping("")
     public ResponseEntity<List<Attendance>> takeAttendance(@RequestBody List<Attendance> attendances){
         return ResponseEntity.ok(attendanceService.saveAll(attendances));

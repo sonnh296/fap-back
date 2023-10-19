@@ -8,13 +8,14 @@ import vn.fpt.fap.seven.service.impl.SessionServiceImpl;
 
 import java.util.List;
 
-@CrossOrigin
+
 @RestController
-@RequestMapping("/api/v1/session")
+@RequestMapping("/api/v1/auth/session")
 @RequiredArgsConstructor
 public class SessionController {
     private final SessionServiceImpl sessionService;
 
+    @CrossOrigin
     @GetMapping("/group/{groupId}")
     public ResponseEntity<List<Session>> findSessionsByGroup(@PathVariable int groupId){
         return ResponseEntity.ok(sessionService.findSessionsByGroup(groupId));

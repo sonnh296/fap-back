@@ -1,6 +1,7 @@
 package vn.fpt.fap.seven.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -42,4 +43,20 @@ public class Session {
     private Teacher teacher;
 
     private boolean attandence;
+
+    @JsonProperty("subject")
+    public String getSubjectFromGroup() {
+        if (group != null) {
+            return group.getSubject().getSubjectName();
+        }
+        return null;
+    }
+
+    @JsonProperty("group")
+    public String getGroupName() {
+        if (group != null) {
+            return group.getGname();
+        }
+        return null;
+    }
 }
